@@ -21,9 +21,24 @@
         <div class="row">
             <div class="col-md-10">
 
-                <p>Welcome Home! <?= $_SESSION['user_id']; ?></p>
+                <?php if (isset($_SESSION['user_id'])) : ?>
 
-                <a href="logout.php">Logout <?= $_SESSION['user_id']; ?></a>
+
+
+                    <p>Welcome Home! <?= $_SESSION['user_id']; ?></p>
+
+                    <a href="logout.php">Logout <?= $_SESSION['user_id']; ?></a>
+
+
+
+
+
+                <?php else : ?>
+
+                    <a href="login.php">Login Here!</a>
+
+                <?php endif; ?>
+
 
 
 
