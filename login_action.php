@@ -1,7 +1,5 @@
 <?php
 
-
-
 require 'requires.php';
 
 
@@ -49,7 +47,7 @@ if (isset($_POST['login'])) {
                 }
             }
         } else {
-            echo 'Invalid Username or Password or duplicate user creation attempt!';
+            echo 'Invalid Username or Password!';
         }
     }
 }

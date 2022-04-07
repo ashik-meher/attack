@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +24,16 @@
                 <p>Already Have an account? </p>
 
                 <a href="login.php">Login Here</a>
+
+                <div class="row" id="session-msg">
+
+                    <?php if (isset($_SESSION['msg'])) : ?>
+
+                        <?php echo $_SESSION['msg']; ?>
+
+                    <?php endif; ?>
+
+                </div>
 
                 <form action="signup_action.php" id="signup-form" method="POST">
 
