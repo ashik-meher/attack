@@ -41,6 +41,51 @@
 
 
 
+                <?php
+
+                require './db/db.php';
+
+                $ssql = "select id, user_id, email from users";
+
+                $res = mysqli_query($conn, $ssql);
+
+                $num_rows = mysqli_num_rows($res);
+
+                echo 'Users: ' . $num_rows;
+
+                ?>
+
+
+                <!-- spec layout should start here -->
+
+
+                <?php
+
+                foreach ($res as $user) :
+
+                ?>
+                    <div class="card" style="padding:20px; margin:10px">
+                        <p><?= $user['id']; ?></p>
+                        <p><?= $user['user_id']; ?></p>
+                        <p><?= $user['email']; ?></p>
+                        <a href="./users/user_view.php?id=<?= urlencode($user['id']); ?>" class="btn btn-primary">View Profile</a>
+                        <a href="" class="btn btn-danger">Chat</a>
+
+
+                    </div>
+
+
+
+                <?php
+
+                endforeach;
+
+                ?>
+
+
+                <!-- spec layout should end here -->
+
+
 
 
 

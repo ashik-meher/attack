@@ -21,9 +21,18 @@
         <div class="row">
             <div class="col-md-10">
 
-                <p>Already Have an account? </p>
+                <div class="row">
 
-                <a href="login.php">Login Here</a>
+                    <?php if (isset($_SESSION['user_id'])) : ?>
+                        <p> <a href="./home.php" class="btn btn-danger">HOME</a></p>
+
+                    <?php endif; ?>
+                </div>
+
+
+
+
+
 
                 <div class="row" id="session-msg">
 
@@ -35,34 +44,51 @@
 
                 </div>
 
-                <form action="signup_action.php" id="signup-form" method="POST">
 
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
+                <?php if (!(isset($_SESSION['user_id']))) : ?>
 
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">User ID</label>
-                        <input type="text" name="user_id" class="form-control" id="exampleInputEmail1" placeholder="Enter user id" required>
 
-                    </div>
 
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
-                    </div>
 
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-                        <label class="form-check-label" name="agreed" for="exampleCheck1">I agree terms and conditions</label>
-                    </div>
+                    <p>Already Have an account? </p>
 
-                    <!--<button type="submit" class="btn btn-primary">Submit</button>-->
-                    <input type="submit" name="signup" class="btn btn-primary" value="SignUp" style="margin: 10px 0;">
+                    <a href="login.php">Login Here</a>
 
-                </form>
+
+
+
+
+                    <form action="signup_action.php" id="signup-form" method="POST">
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">User ID</label>
+                            <input type="text" name="user_id" class="form-control" id="exampleInputEmail1" placeholder="Enter user id" required>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                            <label class="form-check-label" name="agreed" for="exampleCheck1">I agree terms and conditions</label>
+                        </div>
+
+                        <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+                        <input type="submit" name="signup" class="btn btn-primary" value="SignUp" style="margin: 10px 0;">
+
+                    </form>
+
+
+                <?php endif; ?>
 
             </div>
         </div>
