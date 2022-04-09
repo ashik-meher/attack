@@ -65,6 +65,16 @@ endif;
 ?>
 
 
+<div class="card">
+    <p>Demo Ajax Chat Thread</p>
+
+    <div class="chat-body" id="chat-body">
+
+
+    </div>
+</div>
+
+
 <div class="container">
 
     <div class="card" style="width:50px;height:50px; border-radius:50%;text-align:center;">
@@ -86,6 +96,9 @@ endif;
 
 </div>
 
+<!-- special chat js -->
+
+<script src="../js/chatAjaxCall.js" defer></script>
 
 
 
