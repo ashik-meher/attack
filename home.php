@@ -69,7 +69,7 @@
                         <p><?= $user['user_id']; ?></p>
                         <p><?= $user['email']; ?></p>
                         <a href="./users/user_view.php?id=<?= urlencode($user['id']); ?>" class="btn btn-primary">View Profile</a>
-                        <a href="" class="btn btn-danger">Chat</a>
+                        <a href="./users/message.php?id=<?= urlencode($user['id']); ?>" class="btn btn-danger">Chat</a>
 
 
                     </div>

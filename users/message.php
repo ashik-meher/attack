@@ -9,6 +9,8 @@ require '../db/db.php';
 
 require '../functions.php';
 
+//rtc func
+
 $id = mysqli_real_escape_string($conn, $_GET['id']);
 $id = _e($id);
 
@@ -47,7 +49,7 @@ $csql = "select id, sender_id, recepient_id, msg, date, ts from chat_msg where r
 $cres = mysqli_query($conn, $csql);
 
 $chat_history_log = mysqli_num_rows($cres);
-
+/*
 if ($chat_history_log < 1) :
     echo "No Chat History Found!";
 endif;
@@ -57,6 +59,7 @@ if ($chat_history_log >= 1) :
         echo $msg->msg . '&nbsp' . '&nbsp' . '&nbsp' . '&nbsp' . '&nbsp' . '&nbsp' . 'by ' . '&nbsp' . $msg->sender_id . '&nbsp' . '&nbsp' . 'at: ' . '&nbsp' . $msg->ts . $br;
     endwhile;
 endif;
+*/
 
 
 
@@ -84,7 +87,7 @@ endif;
     <form action="message_action.php" method="POST">
 
         <input type="text" name="msg">
-        <input type="hidden" name="recepient_id" value="<?= $user['id']; ?>">
+        <input type="hidden" id="recepient_id" name="recepient_id" value="<?= $user['id']; ?>">
         <input type="submit" class="btn btn-danger" name="submit" value="SEND">
 
 

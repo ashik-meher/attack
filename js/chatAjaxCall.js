@@ -1,21 +1,32 @@
 let chatBody = document.getElementById('chat-body');
 
 
-chatBody.innerHTML = 'HI THere';
+//chatBody.innerHTML = 'HI THere';
 
 function callIt(){
     //chatBody.innerHTML = 'called it';
     //chatBody.innerHTML = '';
     //console.log('OK');
 
+    
+  let id = $('#recepient_id').val();
+
+
+
+
+
     $.ajax({
        
         url: './../users/ajaxMessageCall.php',
         method: 'GET',
+        data: {
+            id:id,
+        },
         success: function(data){
             //console.log(data);
 
             $('#chat-body').html(data);
+            //console.log(data);
 
 
         }
@@ -31,9 +42,9 @@ function clearIt(){
 
 $(document).ready(function(){
     console.log('Hmm');
-    $('#chat-body').html('Hissn');
-    setInterval(callIt, 4000);
-    setInterval(clearIt, 3000);
+    //$('#chat-body').html('Hissn');
+    setInterval(callIt, 1000);
+    //setInterval(clearIt, 3000);
 
 
 
